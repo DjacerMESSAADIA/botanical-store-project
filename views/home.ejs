@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Botanical Store - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <%- include('./partials/nav') %> <% if(success_msg != '') { %>
+    <div
+      class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
+      role="alert"
+    >
+      <%= success_msg %>
+    </div>
+    <% } %> <% if(error_msg != '') { %>
+    <div
+      class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+      role="alert"
+    >
+      <%= error_msg %>
+    </div>
+    <% } %>
+
+    <div class="relative">
+      <!-- Hero Section with animation -->
+      <div class="hero-section relative">
+        <!-- Background image with overlay -->
+        <div
+          class="absolute inset-0 bg-[url('/images/background.jpg')] bg-cover bg-center bg-no-repeat opacity-50"
+        ></div>
+        <!-- Green overlay -->
+        <div class="absolute inset-0 bg-green-800 bg-opacity-40"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div class="text-center flex flex-col items-center gap-4">
+            <h1 class="text-6xl font-lato font-bold text-white mb-4">
+              Welcome to Botanical Store
+            </h1>
+            <p class="text-xl text-whi te font-semibold font-montserrat mb-10">
+              Discover our collection of beautiful plants for your home
+            </p>
+            <a
+              href="/products"
+              class="bg-green-600 text-white px-8 font-semibold py-3 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105"
+            >
+              Shop Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Categories with animation -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+          Our Categories
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="category-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
+          >
+            <img
+              src="/images/indoor-plants.png"
+              alt="Indoor Plants"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Indoor Plants</h3>
+              <p class="text-gray-600 mb-4">
+                Perfect for adding life to any room
+              </p>
+              <a href="/products" class="text-green-600 hover:text-green-700"
+                >View Collection →</a
+              >
+            </div>
+          </div>
+          <div
+            class="category-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
+          >
+            <img
+              src="/images/outdoor-plants.png"
+              alt="Outdoor Plants"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Outdoor Plants</h3>
+              <p class="text-gray-600 mb-4">Transform your garden space</p>
+              <a href="/products" class="text-green-600 hover:text-green-700"
+                >View Collection →</a
+              >
+            </div>
+          </div>
+          <div
+            class="category-card bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
+          >
+            <img
+              src="/images/decorative-plants.png"
+              alt="Decorative Plants"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Decorative Plants</h3>
+              <p class="text-gray-600 mb-4">
+                Add style with our decorative collection
+              </p>
+              <a href="/products" class="text-green-600 hover:text-green-700"
+                >View Collection →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/footer') %>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/animations.js"></script>
+  </body>
+</html>
